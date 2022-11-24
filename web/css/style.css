@@ -1,0 +1,225 @@
+@media (min-width:1000px) and (max-width:1920px) {
+    /* Apenas exibirá em desktops */
+
+@font-face {
+    font-family: lato;
+    src: url("../fonts/Lato-Regular.ttf");
+}
+
+body{
+    font-family: 'lato';
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+table{
+    /* tabelas de cadastro e busca de aluno/acervo */
+    width: 1000px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    border-spacing: 5px; /*alternativa ao antigo cellspacing da table*/
+    /*border: 1px solid #1e1e1e;*/
+    border-radius: 15px;
+    background-color: lightgrey;
+    box-shadow: black 0px 4px 8px -2px, grey 0px 0px 0px 1px;
+}
+
+table tr:nth-child(1n+2) td:nth-child(1){
+    /* 
+        Aplica a toda primeira coluna, após a primeira linha
+        Alinha todos os textos das tabelas à direita
+    */
+    text-align: right;
+}
+
+table tr:nth-child(1n+2) td:nth-child(3){
+    /* 
+        Aplica a toda terceira coluna, após a primeira linha
+        Alinha todos os campos das tabelas à esquerda
+    */
+    text-align: left;
+}
+
+iframe{
+    /* O iframe que fica dentro das telas de cadastro e busca */
+    border: 1px solid #1e1e1e;
+    background-color: whitesmoke;
+    width: 970px;
+    height: 400px;
+}
+
+ul{
+    /* Posiciona as DIVs em pilhas - uma embaixo da outra*/
+    list-style: none;
+    /*border: 2px solid firebrick;*/
+    margin: 0;
+    padding: 0;
+}
+
+.li-form{
+    /* Cria espaco entre os campos */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*border: 1px dotted orange;*/
+}
+
+input{
+    /* modela os campos */
+    width: 500px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+input[type="button"]{
+    width: 280px;
+}
+
+.botao-estilo-caixa{
+    /* Botoes com superficie grande e quadrada */
+    width: 400px;
+    height: 200px;
+}
+
+.inputQuestaoQuizz{
+    /* define a largura do campo de questoes do quizz */
+    width: 800px;
+}
+
+.inputPtosQuizz{
+    /* define a largura do campo de pontos do quizz */
+    width: 50px;
+}
+
+#body--game {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(38,38,161,1) 35%, rgba(0,212,255,1) 100%);
+    /* fonte: https://cssgradient.io/ */
+}
+
+#div-main{
+    /* 
+        Centraliza a DIV principal ao centro 
+        Usado em todas as páginas
+    */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    /*border: red solid 4px;*/
+}
+
+/*
+#div-main--header{
+    /*
+        Usado em todas as páginas
+    
+    border: green solid 4px;
+}*/
+
+
+#div-main--body{
+    /*
+        Usado em todas as páginas
+    */
+    /*border: blue solid 4px;*/
+    width: 1000px;
+}
+
+/*
+#div-main--footer{
+    /*
+        Usado em todas as páginas
+    
+    border: pink solid 4px;
+}*/
+
+#div-main--cenario{
+    /*
+        Usado somente na página game.html
+    */
+    height: 700px;
+    width: 930px;
+    background-image: url('../assets/pi3-cenario-transparente.png');
+    background-repeat: no-repeat;
+    z-index: 99;
+}
+
+#div-main--body--estrelas{
+    /* 
+        Estilo de galáxia, com estrelas cintilantes 
+        Usado somente na página game.html
+        fonte: https://dev.to/0shuvo0/pure-css-infinite-spacegalaxy-with-just-one-div-4o02
+    */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -24vw -44vh 2px 2px #fff,38vw -4vh 0px 0px #fff,-20vw -48vh 1px 2px #fff,-39vw 38vh 3px 1px #fff,-42vw -11vh 0px 3px #fff,12vw 15vh 3px 3px #fff,42vw 6vh 3px 2px #fff,-8vw 9vh 0px 2px #fff,34vw -38vh 1px 0px #fff,-17vw 45vh 3px 1px #fff,22vw -36vh 3px 2px #fff,-42vw 1vh 1px 0px #fff;
+    animation: zoom 10s alternate infinite;
+}
+
+@keyframes zoom {
+    /* 
+        Estilo de galáxia, com estrelas cintilantes 
+        Usado somente na página game.html
+    */
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2.5);
+    }
+}
+
+#li-form-cadastro-aluno{
+    /* Oculta o form */
+    display: none;
+}
+
+#li-form-cadastro-acervo{
+    /* Oculta o form */
+    display: none;
+}
+
+#div-mensagem-erro{
+    /* 
+        mensagem de erro de tamanho de tela
+        (aparece em telas menores, somente)
+    */
+    display: none;
+}
+} /* fim da media queries */
+
+@media (max-width:999px){
+    /* 
+        Se a larg. tela for menor de 1000px 
+        Evita o uso, bloquando o layout
+    */
+    body{
+        background-color: black;
+    }
+
+    #div-main{
+        /* Cobre a tela com a div toda */
+        position: absolute;
+        display: none;
+    }
+
+    #div-mensagem-erro{
+        /* mensagem de erro de tamanho de tela*/
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Courier New', Courier, monospace;
+        display: block;
+    }
+    
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>O Jogo da Leitura</title>
+</head>
+<body>
+	<div id="div-main">
+		<ul>
+			<li>
+				<div id="div-main--header">
+					<h1>Tela de Cadastro</h1>
+				</div>
+			</li>
+			<li>
+				<div id="div-main--body">
+					<!-- Tabela para formulário de cadastro do aluno -->
+                    <ul>
+                        <li class="li-form">
+                            <input type="button" id="btnCadastroAluno" value="Cadastro de discente">
+                            <input type="button" id="btnCadastroAcervo" value="Cadastro do acervo">
+                        </li>
+                        <li id="li-form-cadastro-aluno">
+                            <table border="0">
+                                <tr>
+                                    <td colspan="3"><label>Cadastro de discente</label></td>
+                                </tr>
+                                <tr>
+                                    <td width="300px">RG escolar</td>
+                                    <td width="40px"></td>
+                                    <td width="650px"><input type="text" name="" id="txtRG" maxlength="20" placeholder="Sem pontos e traços"></td>
+                                </tr>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td></td>
+                                    <td><input type="text" name="" id="txtNome" maxlength="30"></td>
+                                </tr>
+                                <tr>
+                                    <td>Data de nasc.</td>
+                                    <td></td>
+                                    <td><input type="text" name="" id="txtDtNasc" maxlength="10" placeholder="dd/mm/aaaa"></td>
+                                </tr>
+                                <tr>
+                                    <td>Série</td>
+                                    <td></td>
+                                    <td><input type="text" name="" id="txtSerie" maxlength="1" placeholder="Ex.: 4"></td>
+                                </tr>
+                                <tr>
+                                    <td>Turma</td>
+                                    <td></td>
+                                    <td>
+                                        <select name="" id="comboBoxTurma">
+                                            <option value="A" selected>A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="E">E</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <td>Período</td>
+                                <td></td>
+                                    <td>
+                                        <select name="" id="comboBoxPeriodo">
+                                            <option value="manha" selected>Manhã</option>
+                                            <option value="tarde">Tarde</option>
+                                            <option value="noite">Noite</option>
+                                        </select>
+                                    </td>
+                                <tr>
+                                    <td colspan="3">
+                                        <form action="">
+                                            <input type="button" id="" name="" value="Cadastrar discente" disabled>
+                                            <input type="button" id="" name="" value="CANCELAR">
+                                        </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <!-- Fim do formulario de cadastro do aluno -->
+                        <!--
+
+                            /////////////////////////////////////////////////////////////////////
+
+                        -->
+                        <li id="li-form-cadastro-acervo">
+                            <table border="0">
+                                <tr>
+                                    <td colspan="3"><label>Cadastro do acervo</label></td>
+                                </tr>
+                                <tr>
+                                    <td width="300px">Tombo</td>
+                                    <td width="40px"></td>
+                                    <td width="650px"><input type="text" name="" id="txtTombo" maxlength="10" placeholder="Número do tombo"></td>
+                                </tr>
+                                <tr>
+                                    <td>Título</td>
+                                    <td></td>
+                                    <td><input type="text" name="" id="txt" maxlength="100" placeholder="Título da capa do livro"></td>
+                                </tr>
+                                <tr>
+                                    <td>Autor</td>
+                                    <td></td>
+                                    <td><input type="text" name="" id="txtISBN" maxlength="50" placeholder="Nome do Autor"></td>
+                                </tr>
+                                <tr>
+                                    <td>Assunto</td>
+                                    <td></td>
+                                    <td><input type="text" name="" id="txt" maxlength="50" placeholder="Ex.: Ciências, aventura, infantil"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <form action="">
+                                            <input type="button" id="" name="" value="Cadastrar obra" disabled>
+                                            <input type="button" id="" name="" value="CANCELAR">
+                                        </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <!--Fim fo form de cadastro do acervo -->
+                    </ul>
+				</div>
+			</li>
+			<li>
+				<div id="div-main--footer">
+                    <p>footer</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+    <script>
+        document.getElementById("btnCadastroAluno").addEventListener("click", ()=>funcExibeOcultaForms("li-form-cadastro-aluno"));
+        document.getElementById("btnCadastroAcervo").addEventListener("click", ()=>funcExibeOcultaForms("li-form-cadastro-acervo"));
+
+        function funcExibeOcultaForms(id){
+            // oculta todos os forms
+            document.getElementById('li-form-cadastro-aluno').style.display = 'none';
+            document.getElementById('li-form-cadastro-acervo').style.display = 'none';
+            // Exibe o form solciitado
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+

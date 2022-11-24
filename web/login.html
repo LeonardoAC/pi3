@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>O Jogo da Leitura</title>
+</head>
+<body>
+	<div id="div-main">
+		<ul>
+			<li>
+				<div id="div-main--header">
+					<h1>Jogo da Leitura</h1>
+				</div>
+			</li>
+			<li>
+				<div id="div-main--body">
+					<!-- Campos do login -->
+					<ul>
+						<form id="formLogin">
+							<li class="li-form"><input type="email" id="user" maxlength="30" value="mada" placeholder="USER ID"></li>
+							<li class="li-form"><input type="password" id="passwd" maxlength="30" value="123" placeholder="SENHA"></li>
+							<li class="li-form"><a href="#" id="a-esqueci-senha">Esqueci a senha</a></li>
+							<li class="li-form"><input type="button" id="btnEnvia" value="Ok"></li>
+						</form>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<div id="div-main--footer">
+					<li><a target="_blank" href="https://code.tutsplus.com/articles/create-a-javascript-ajax-post-request-with-and-without-jquery--cms-39195">fonte</a></li>
+					<li><a target="_blank" href="https://makolyte.com/javascript-post-form-data-to-a-web-api-asynchronously/">fonte</a></li>
+					<li><a target="_blank"href="https://www.freecodecamp.org/news/asynchronous-javascript-explained/">fonte</a></li>
+					<li><a target="_blank"href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fonte</a></li>
+					<li><a target="_blank"href="https://nocodeform.io/docs/forms/submit-form-with-fetch">fonte</a></li>
+					<li><a href="https://stackoverflow.com/questions/33439030/how-to-grab-data-using-fetch-api-post-method-in-php"></a>fonte</li>
+					<li><a href=""></a>fonte</li>
+					<li><a href=""></a>fonte</li>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<script>
+		document.getElementById("a-esqueci-senha").addEventListener("click", ()=> funcExibeDivExplicativa());
+		document.getElementById("btnEnvia").addEventListener("click", ()=> envia());
+
+		function funcExibeDivExplicativa(){
+			alert('O ID é o RG escolar e a senha é a data de nascimento');
+		}
+
+		function envia(){
+			//let formData = new FormData();
+			//	formData.append('user', 'leo');
+			//	formData.append('passwd', '123');
+			/*	fetch("http://172.16.0.13:8000/user/?user=leo&passwd=123",
+					{
+						//body: formData,
+						method: "GET",
+      					mode: "no-cors", 		// no-cors, *cors, same-origin
+      					//cache: 'no-cache', 		// *default, no-cache, reload, force-cache, only-if-cached
+      					//credentials: "omit", 	// include, *same-origin, omit
+      					headers: {
+							"Content-Type": "application/json",  // sent request
+							"Content-Type": "Access-Control-Allow-Headers",
+							"Accept":       "application/json"   // expected data sent back
+      					},
+					})
+					.then(response => response.json)
+					.then(data => console.log("dado: "+data))
+					.catch(error=>console.log(error))
+
+*/
+					fetch("http://172.16.0.13:8000/user/?user=leo&passwd=123", {
+						method: 'get',
+						mode: "no-cors",
+						//body: post,
+						headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
+						}
+					})
+					.then(res =>res.json)
+					.then(a=>a.results);
+					
+		}//envia
+
+		console.log(envia());
+
+	</script>
+</body>
+</html>
